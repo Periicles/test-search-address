@@ -1,5 +1,5 @@
+import parseContext from '../utils/parseContext';
 import type { IResultListProps } from '../interfaces/IAddress';
-import { parseContext } from '../utils/parseContext';
 
 export default function ResultList({ addresses }: IResultListProps) {
     if (addresses.length === 0) {
