@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import type { TApiResponse } from '../types/TApiResponse';
 import type { IAddress } from '../interfaces/IAddress';
+import type { TApiResponse } from '../types/TApiResponse';
+import type { TSearchResults } from '../types/TSearchResults';
 
-export const useAddressSearch = () => {
-    const [addresses, setAddresses] = useState<IAddress[]>([]);
+export default function useAddressSearch(): TSearchResults {
+    const [addresses, setAddresses] = useState<Array<IAddress>>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -28,7 +29,7 @@ export const useAddressSearch = () => {
             }
 
             const data: TApiResponse = await response.json();
-            const formattedAddresses: IAddress[] = data.features.map((feature) => feature.properties);
+            const formattedAddresses: Array<IAddress> = data.features.map((feature) => feature.properties);
             const seen = new Set<string>();
             const uniqueAddresses = formattedAddresses.filter((addr) => {
                 if (seen.has(addr.id)) {
@@ -56,5 +57,5 @@ export const useAddressSearch = () => {
         loading,
         error,
         searchAddresses
-    };
+    } as TSearchResults;
 };
