@@ -1,8 +1,14 @@
 import type { ParsedContext } from '../types/TApiResponse';
 
 /**
- * Parse BAN `context` string like "95, Val-d'Oise, Île-de-France"
- * into department code, department name, and region name.
+ * The parseContext utility splits a BAN `context` string
+ * (e.g., "95, Val-d'Oise, Île-de-France") into its department code, department
+ * name, and region name components.
+ *
+ * @param context - Raw context string provided by the Base d'Adresses Nationale
+ * API.
+ * @returns A structured object with `depCode`, `depName`, and `region` fields
+ * when available.
  */
 export default function parseContext(context?: string): ParsedContext {
     if (!context)

@@ -1,6 +1,10 @@
-# Recherche d'adresses (BAN)
+# Recherche d'adresses (Base d'Adresses Nationale)
 
-Application React + TypeScript permettant de rechercher des adresses françaises via l'API officielle BAN (api-adresse.data.gouv.fr). Interface centrée, thème DaisyUI dark.
+Application React + TypeScript permettant de rechercher des adresses françaises
+via l'API officielle Base d'Adresses Nationale (api-adresse.data.gouv.fr).
+Interface centrée, thème DaisyUI dark.
+
+Documentation API : https://data.gouv.fr/dataservices/api-adresse-base-nationale-ban
 
 Le projet est accessible à cette addresse : <https://test-search-address.vercel.app>
 
@@ -8,7 +12,8 @@ Le projet est accessible à cette addresse : <https://test-search-address.vercel
 
 - Recherche à partir de 3 caractères, debounce pour limiter les requêtes.
 - Résultats sans doublons, triés et affichés sous forme de cartes.
-- Parsing du contexte BAN pour afficher code/nom de département et région.
+- Parsing du contexte Base d'Adresses Nationale pour afficher code/nom de
+  département et région.
 - Thème sombre DaisyUI et mise en page responsive.
 
 ## Stack
@@ -28,7 +33,8 @@ Le projet est accessible à cette addresse : <https://test-search-address.vercel
 - src/App.tsx : composition principale.
 - src/components : barre de recherche et liste de résultats.
 - src/hooks/useAddressSearch.ts : appel API, gestion erreurs/loading.
-- src/utils/parseContext.ts : extraction département/région depuis le champ `context` BAN.
+- src/utils/parseContext.ts : extraction département/région depuis le champ
+  `context` Base d'Adresses Nationale.
 
 ## Notes
 

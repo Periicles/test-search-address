@@ -1,6 +1,13 @@
 import parseContext from '../utils/parseContext';
 import type { IResultListProps } from '../interfaces/IAddress';
 
+/**
+ * The ResultList component renders address search results with contextual
+ * details.
+ *
+ * @param addresses - The list of addresses to display.
+ * @return A JSX element displaying the list of addresses.
+ */
 export default function ResultList({ addresses }: IResultListProps) {
     if (addresses.length === 0) {
         return null;

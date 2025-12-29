@@ -14,7 +14,7 @@ export default function App() {
             Recherche d'Adresse en France
           </h1>
           <p className="text-base text-base-content/70">
-            Trouvez une adresse officielle via l'API BAN
+            Trouvez une adresse officielle via l'API de la Base d'Adresses Nationale
           </p>
         </div>
 
